@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Container.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
+		<key>HTTPFetcher.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>ImageLoader.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -14,15 +24,35 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>TEAService.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>AC0EA28E1E6750BE005FA25F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>ACB493B81E60661D00EF069E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>ACB493D21E60668600EF069E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ACB493EC1E60675000EF069E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ACB494011E6067CC00EF069E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
