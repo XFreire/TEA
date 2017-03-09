@@ -27,8 +27,27 @@
 		AC84417B1E699F8A00801CD7 /* PictogramContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84417A1E699F8A00801CD7 /* PictogramContainer.swift */; };
 		AC84417D1E69BF5800801CD7 /* Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84417C1E69BF5800801CD7 /* Fetchable.swift */; };
 		AC84417F1E69CDC200801CD7 /* TaskContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84417E1E69CDC200801CD7 /* TaskContainer.swift */; };
+		AC84418F1E69D6D300801CD7 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84418E1E69D6D300801CD7 /* Color.swift */; };
+		AC8441951E69D6E100801CD7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8441901E69D6E100801CD7 /* Coordinator.swift */; };
+		AC8441961E69D6E100801CD7 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8441911E69D6E100801CD7 /* NibLoadableView.swift */; };
+		AC8441971E69D6E100801CD7 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8441921E69D6E100801CD7 /* ReusableView.swift */; };
+		AC8441981E69D6E100801CD7 /* UICollectionView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8441931E69D6E100801CD7 /* UICollectionView+Additions.swift */; };
+		AC8441991E69D6E100801CD7 /* UISearchBar+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8441941E69D6E100801CD7 /* UISearchBar+Additions.swift */; };
+		AC84419C1E69D70500801CD7 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84419B1E69D70500801CD7 /* AppCoordinator.swift */; };
+		AC84419F1E69D7FA00801CD7 /* ScheduleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84419E1E69D7FA00801CD7 /* ScheduleCoordinator.swift */; };
+		AC8441A21E69D86600801CD7 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8441A01E69D86600801CD7 /* ScheduleViewController.swift */; };
+		AC8441A31E69D86600801CD7 /* ScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC8441A11E69D86600801CD7 /* ScheduleViewController.xib */; };
+		AC8441A51E69E29200801CD7 /* AddTaskCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8441A41E69E29200801CD7 /* AddTaskCoordinator.swift */; };
+		ACA1EFCC1E6D69A9007BFC13 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1EFCA1E6D69A9007BFC13 /* AddTaskViewController.swift */; };
+		ACA1EFCD1E6D69A9007BFC13 /* AddTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACA1EFCB1E6D69A9007BFC13 /* AddTaskViewController.xib */; };
+		ACA1EFCF1E6EA642007BFC13 /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1EFCE1E6EA642007BFC13 /* AddTaskViewModel.swift */; };
+		ACA1EFD31E6EB142007BFC13 /* PictogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1EFD21E6EB142007BFC13 /* PictogramView.swift */; };
+		ACA1EFD51E6EB248007BFC13 /* PictogramView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACA1EFD41E6EB248007BFC13 /* PictogramView.xib */; };
+		ACA1EFD81E6EB561007BFC13 /* PictogramCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1EFD61E6EB561007BFC13 /* PictogramCell.swift */; };
+		ACA1EFD91E6EB561007BFC13 /* PictogramCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACA1EFD71E6EB561007BFC13 /* PictogramCell.xib */; };
+		ACA1EFDC1E6ED5CC007BFC13 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA1EFDB1E6ED5CC007BFC13 /* camera.png */; };
+		ACA1EFE11E6EF751007BFC13 /* Client+API+Pictogram.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1EFDF1E6EF3BC007BFC13 /* Client+API+Pictogram.swift */; };
 		ACB493BD1E60661D00EF069E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB493BC1E60661D00EF069E /* AppDelegate.swift */; };
-		ACB493BF1E60661D00EF069E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB493BE1E60661D00EF069E /* ViewController.swift */; };
 		ACB493C41E60661D00EF069E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB493C31E60661D00EF069E /* Assets.xcassets */; };
 		ACB493C71E60661D00EF069E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB493C51E60661D00EF069E /* LaunchScreen.storyboard */; };
 		ACB493D71E60668600EF069E /* ImageLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = ACB493D51E60668600EF069E /* ImageLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -139,9 +158,28 @@
 		AC84417A1E699F8A00801CD7 /* PictogramContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictogramContainer.swift; sourceTree = "<group>"; };
 		AC84417C1E69BF5800801CD7 /* Fetchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetchable.swift; sourceTree = "<group>"; };
 		AC84417E1E69CDC200801CD7 /* TaskContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskContainer.swift; sourceTree = "<group>"; };
+		AC84418E1E69D6D300801CD7 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		AC8441901E69D6E100801CD7 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		AC8441911E69D6E100801CD7 /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		AC8441921E69D6E100801CD7 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		AC8441931E69D6E100801CD7 /* UICollectionView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Additions.swift"; sourceTree = "<group>"; };
+		AC8441941E69D6E100801CD7 /* UISearchBar+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Additions.swift"; sourceTree = "<group>"; };
+		AC84419B1E69D70500801CD7 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		AC84419E1E69D7FA00801CD7 /* ScheduleCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCoordinator.swift; sourceTree = "<group>"; };
+		AC8441A01E69D86600801CD7 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		AC8441A11E69D86600801CD7 /* ScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleViewController.xib; sourceTree = "<group>"; };
+		AC8441A41E69E29200801CD7 /* AddTaskCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskCoordinator.swift; sourceTree = "<group>"; };
+		ACA1EFCA1E6D69A9007BFC13 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		ACA1EFCB1E6D69A9007BFC13 /* AddTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTaskViewController.xib; sourceTree = "<group>"; };
+		ACA1EFCE1E6EA642007BFC13 /* AddTaskViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
+		ACA1EFD21E6EB142007BFC13 /* PictogramView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictogramView.swift; sourceTree = "<group>"; };
+		ACA1EFD41E6EB248007BFC13 /* PictogramView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PictogramView.xib; sourceTree = "<group>"; };
+		ACA1EFD61E6EB561007BFC13 /* PictogramCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictogramCell.swift; sourceTree = "<group>"; };
+		ACA1EFD71E6EB561007BFC13 /* PictogramCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PictogramCell.xib; sourceTree = "<group>"; };
+		ACA1EFDB1E6ED5CC007BFC13 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		ACA1EFDF1E6EF3BC007BFC13 /* Client+API+Pictogram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Client+API+Pictogram.swift"; sourceTree = "<group>"; };
 		ACB493B91E60661D00EF069E /* TEA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TEA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB493BC1E60661D00EF069E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ACB493BE1E60661D00EF069E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ACB493C31E60661D00EF069E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACB493C61E60661D00EF069E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACB493C81E60661D00EF069E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -320,6 +358,77 @@
 			name = ModelResults;
 			sourceTree = "<group>";
 		};
+		AC84418A1E69D63A00801CD7 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				AC8441901E69D6E100801CD7 /* Coordinator.swift */,
+				AC8441911E69D6E100801CD7 /* NibLoadableView.swift */,
+				AC8441921E69D6E100801CD7 /* ReusableView.swift */,
+				AC8441931E69D6E100801CD7 /* UICollectionView+Additions.swift */,
+				AC8441941E69D6E100801CD7 /* UISearchBar+Additions.swift */,
+			);
+			name = Others;
+			sourceTree = "<group>";
+		};
+		AC84418D1E69D69500801CD7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AC84418E1E69D6D300801CD7 /* Color.swift */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		AC84419A1E69D6ED00801CD7 /* Bootstrap */ = {
+			isa = PBXGroup;
+			children = (
+				ACB493BC1E60661D00EF069E /* AppDelegate.swift */,
+				AC84419B1E69D70500801CD7 /* AppCoordinator.swift */,
+			);
+			name = Bootstrap;
+			sourceTree = "<group>";
+		};
+		AC84419D1E69D7ED00801CD7 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				AC8441A71E69E2A000801CD7 /* WeekSchedule */,
+				AC8441A61E69E29600801CD7 /* AddTask */,
+			);
+			name = Schedule;
+			sourceTree = "<group>";
+		};
+		AC8441A61E69E29600801CD7 /* AddTask */ = {
+			isa = PBXGroup;
+			children = (
+				AC8441A41E69E29200801CD7 /* AddTaskCoordinator.swift */,
+				ACA1EFCE1E6EA642007BFC13 /* AddTaskViewModel.swift */,
+				ACA1EFCA1E6D69A9007BFC13 /* AddTaskViewController.swift */,
+				ACA1EFCB1E6D69A9007BFC13 /* AddTaskViewController.xib */,
+				ACA1EFDF1E6EF3BC007BFC13 /* Client+API+Pictogram.swift */,
+			);
+			name = AddTask;
+			sourceTree = "<group>";
+		};
+		AC8441A71E69E2A000801CD7 /* WeekSchedule */ = {
+			isa = PBXGroup;
+			children = (
+				AC84419E1E69D7FA00801CD7 /* ScheduleCoordinator.swift */,
+				AC8441A01E69D86600801CD7 /* ScheduleViewController.swift */,
+				AC8441A11E69D86600801CD7 /* ScheduleViewController.xib */,
+			);
+			name = WeekSchedule;
+			sourceTree = "<group>";
+		};
+		ACA1EFD11E6EB121007BFC13 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ACA1EFD21E6EB142007BFC13 /* PictogramView.swift */,
+				ACA1EFD41E6EB248007BFC13 /* PictogramView.xib */,
+				ACA1EFD61E6EB561007BFC13 /* PictogramCell.swift */,
+				ACA1EFD71E6EB561007BFC13 /* PictogramCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		ACB493B01E60661D00EF069E = {
 			isa = PBXGroup;
 			children = (
@@ -346,8 +455,12 @@
 		ACB493BB1E60661D00EF069E /* TEA */ = {
 			isa = PBXGroup;
 			children = (
-				ACB493BC1E60661D00EF069E /* AppDelegate.swift */,
-				ACB493BE1E60661D00EF069E /* ViewController.swift */,
+				ACA1EFDB1E6ED5CC007BFC13 /* camera.png */,
+				AC84419A1E69D6ED00801CD7 /* Bootstrap */,
+				ACA1EFD11E6EB121007BFC13 /* Views */,
+				AC84419D1E69D7ED00801CD7 /* Schedule */,
+				AC84418A1E69D63A00801CD7 /* Others */,
+				AC84418D1E69D69500801CD7 /* Resources */,
 				ACB493C31E60661D00EF069E /* Assets.xcassets */,
 				ACB493C51E60661D00EF069E /* LaunchScreen.storyboard */,
 				ACB493C81E60661D00EF069E /* Info.plist */,
@@ -640,7 +753,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACA1EFD51E6EB248007BFC13 /* PictogramView.xib in Resources */,
+				ACA1EFDC1E6ED5CC007BFC13 /* camera.png in Resources */,
+				AC8441A31E69D86600801CD7 /* ScheduleViewController.xib in Resources */,
+				ACA1EFCD1E6D69A9007BFC13 /* AddTaskViewController.xib in Resources */,
 				ACB493C71E60661D00EF069E /* LaunchScreen.storyboard in Resources */,
+				ACA1EFD91E6EB561007BFC13 /* PictogramCell.xib in Resources */,
 				ACB493C41E60661D00EF069E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -866,8 +984,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACB493BF1E60661D00EF069E /* ViewController.swift in Sources */,
+				AC8441951E69D6E100801CD7 /* Coordinator.swift in Sources */,
+				ACA1EFD31E6EB142007BFC13 /* PictogramView.swift in Sources */,
+				ACA1EFCC1E6D69A9007BFC13 /* AddTaskViewController.swift in Sources */,
+				ACA1EFCF1E6EA642007BFC13 /* AddTaskViewModel.swift in Sources */,
+				AC8441991E69D6E100801CD7 /* UISearchBar+Additions.swift in Sources */,
+				AC8441961E69D6E100801CD7 /* NibLoadableView.swift in Sources */,
+				AC8441971E69D6E100801CD7 /* ReusableView.swift in Sources */,
+				AC84419F1E69D7FA00801CD7 /* ScheduleCoordinator.swift in Sources */,
+				AC8441A51E69E29200801CD7 /* AddTaskCoordinator.swift in Sources */,
 				ACB493BD1E60661D00EF069E /* AppDelegate.swift in Sources */,
+				ACA1EFE11E6EF751007BFC13 /* Client+API+Pictogram.swift in Sources */,
+				AC84419C1E69D70500801CD7 /* AppCoordinator.swift in Sources */,
+				AC8441981E69D6E100801CD7 /* UICollectionView+Additions.swift in Sources */,
+				ACA1EFD81E6EB561007BFC13 /* PictogramCell.swift in Sources */,
+				AC8441A21E69D86600801CD7 /* ScheduleViewController.swift in Sources */,
+				AC84418F1E69D6D300801CD7 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,7 +16,7 @@ import RxCocoa
 class PictogramView: UIView {
     
     // MARK: Properties
-    
+    @IBOutlet weak var view: UIView!
     /// The url of the cover image
     var url: URL? {
         didSet {
@@ -26,27 +26,31 @@ class PictogramView: UIView {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     fileprivate let loader = RemoteImageLoader.instance
     fileprivate var disposeBag: DisposeBag?
+    
+    
     
     // MARK: Initialization
     
     init() {
         super.init(frame: CGRect.zero)
+        fromNib()
         setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        fromNib()
         setup()
+        
     }
     
     // MARK: Overrides
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         imageView.frame = bounds
-        
     }
 }
 
@@ -55,9 +59,6 @@ class PictogramView: UIView {
 private extension PictogramView {
     
     func setup() {
-        addSubview(imageView)
-        addSubview(titleLabel)
-        
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
     }
@@ -98,6 +99,7 @@ private extension PictogramView {
             // Add a fade animation and set the image
             imageView.layer.add(CATransition.fade, forKey: kCATransition)
             imageView.image = image
+            self.activityIndicator.stopAnimating()
             }.asObserver()
     }
 }
@@ -111,6 +113,20 @@ private extension CATransition {
         transition.type = kCATransitionFade
         
         return transition
+    }
+}
+
+extension UIView {
+    
+    @discardableResult
+    func fromNib<T : UIView>() -> T? {
+        guard let view = Bundle.main.loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)?[0] as? T else {
+            return nil
+        }
+        self.addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view 
     }
 }
 

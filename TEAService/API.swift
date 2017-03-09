@@ -28,9 +28,9 @@ extension API: Resource {
                 "callback"          :   "json",
                 "language"          :   "ES",
                 "catalog"           :   "colorpictos",
-                "ThumbnailSize"     :   "155",
-                "TXTlocate"         :   "1",
-                "nresults"          :   "50",
+                "ThumbnailSize"     :   "150",
+                "TXTlocate"         :   "4",
+                "nresults"          :   "1",
                 "word"              :   q
             ]
         }

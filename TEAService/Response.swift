@@ -19,7 +19,9 @@ public struct Response {
     
     
     public func result<T: JSONDecodable>() -> T? {
-        return (payload as? JSONDictionary).flatMap(decode)
+        let array: [T]? =  (payload as? [JSONDictionary]).flatMap(decode)
+        return array?.first
+        
     }
     
     public func results<T: JSONDecodable>() -> [T]? {

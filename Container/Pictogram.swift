@@ -22,6 +22,19 @@ public struct Pictogram {
     public var audio: Audio?
     public var image: Image?
     public var task: Task?
+    
+    // MARK: - Initialization
+    public init(identifier: String, name: String, audioUrl: URL? = nil, imageUrl: URL? = nil, wordType: Int? = nil, audio: Audio? = nil, image: Image? = nil, task: Task? = nil){
+        
+        self.identifier = identifier
+        self.name = name
+        self.audioUrl = audioUrl
+        self.imageUrl = imageUrl
+        self.wordType = wordType
+        self.audio = audio
+        self.image = image
+        self.task = task
+    }
 }
 
 extension Pictogram: Persistable {

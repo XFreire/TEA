@@ -11,7 +11,7 @@ import RxSwift
 
 extension Client {
     
-    public func searchPictograms(forQuery query: String) -> Observable<[ArasaacPictogram]>{
-        return objects(forResource: API.pictograms(query: query))
-    }
+//    public func searchPictograms(forQuery query: String) -> Observable<[ArasaacPictogram]>{
+//        return objects(forResource: API.pictograms(query: query))
+//    }
 }

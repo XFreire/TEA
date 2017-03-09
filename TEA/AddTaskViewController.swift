@@ -7,29 +7,88 @@
 //
 
 import UIKit
+import Container
+import RxSwift
 
 class AddTaskViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: - Views
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var microphoneButton: UIButton!
+    @IBOutlet weak var titleTextField: UITextField!
+    
+    @IBOutlet weak var collectionView: UICollectionView!{
+        didSet {
+            collectionView.register(PictogramCell.self)
+            collectionView.backgroundColor = UIColor(named: .background)
+        }
     }
     
+    // MARK: - Properties
+    
+    var didFinish: () -> Void = {}
+    
+    /// Called when the user taps the microphone button
+    var didTapMicrophone: () -> Void = { _ in }
+    
+    /// Called when the user selects a pictogram
+    var didSelectVolume: (Pictogram) -> Void = { _ in }
+    
+    fileprivate let viewModel: AddTaskViewModel
+    
+    fileprivate let disposeBag = DisposeBag()
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    // MARK: - Initialization
+    
+    init(viewModel: AddTaskViewModel = AddTaskViewModel()) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
     }
-    */
-
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.edgesForExtendedLayout = []
+        
+//        titleTextField.rx.text.orEmpty
+//            .subscribe(onNext: { [weak self] in
+//                print("Text: \($0)")
+//                self?.viewModel.taskTitle.value = $0
+//            })
+//            .addDisposableTo(disposeBag)
+        
+        
+        
+        titleTextField.rx.text.orEmpty
+            .bindTo(viewModel.taskTitle)
+            .addDisposableTo(disposeBag)
+        
+        viewModel.pictograms
+            .bindTo(collectionView.rx.items(cellIdentifier: PictogramCell.defaultReuseIdentifier, cellType: PictogramCell.self)){ _, pictogramObs, cell in
+                
+                pictogramObs.subscribe(onNext: { pictogram in
+                    cell.pictogramView.titleLabel.text = pictogram.name
+                    cell.pictogramView.url = pictogram.imageUrl
+                })
+                .addDisposableTo(self.disposeBag)
+            }
+            .addDisposableTo(disposeBag)
+        
+        
+        
+    }
+    
+    // MARK: - Actions
+    @IBAction func microphoneTapped(_ sender: Any) {
+        didTapMicrophone()
+    }
+    
+    
+    
 }
