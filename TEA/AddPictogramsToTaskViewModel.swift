@@ -11,7 +11,7 @@ import RxSwift
 import Container
 import TEAService
 
-protocol AddTaskViewModelType {
+protocol AddPictogramsToTaskViewModelType {
     
 
     
@@ -21,7 +21,7 @@ protocol AddTaskViewModelType {
     
 }
 
-final class AddTaskViewModel: AddTaskViewModelType {
+final class AddPictogramsToTaskViewModel: AddPictogramsToTaskViewModelType {
     
     let taskTitle = Variable("")
     
@@ -29,7 +29,7 @@ final class AddTaskViewModel: AddTaskViewModelType {
         .filter { query in
             query.characters.count > 3
         }
-        .throttle(0.3, scheduler: MainScheduler.instance)
+        .throttle(1, scheduler: MainScheduler.instance)
         .map{ query in
             query.components(separatedBy: " ").filter{ $0 != ""}
         }
@@ -44,6 +44,7 @@ final class AddTaskViewModel: AddTaskViewModelType {
         }
         .observeOn(MainScheduler.instance)
         .shareReplay(1)
+    
     
     
     

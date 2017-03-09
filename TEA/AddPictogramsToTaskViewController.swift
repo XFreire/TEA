@@ -10,7 +10,7 @@ import UIKit
 import Container
 import RxSwift
 
-class AddTaskViewController: UIViewController {
+class AddPictogramsToTaskViewController: UIViewController {
 
     // MARK: - Views
     @IBOutlet weak var titleLabel: UILabel!
@@ -32,17 +32,19 @@ class AddTaskViewController: UIViewController {
     /// Called when the user taps the microphone button
     var didTapMicrophone: () -> Void = { _ in }
     
-    /// Called when the user selects a pictogram
-    var didSelectVolume: (Pictogram) -> Void = { _ in }
+    var didTapSave: ([Pictogram]) -> Void = { _ in }
     
-    fileprivate let viewModel: AddTaskViewModel
+    /// Called when the user selects a pictogram
+    var didSelectPictogram: (Pictogram) -> Void = { _ in }
+    
+    fileprivate let viewModel: AddPictogramsToTaskViewModel
     
     fileprivate let disposeBag = DisposeBag()
 
     
     // MARK: - Initialization
     
-    init(viewModel: AddTaskViewModel = AddTaskViewModel()) {
+    init(viewModel: AddPictogramsToTaskViewModel = AddPictogramsToTaskViewModel()) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
     }
@@ -55,7 +57,7 @@ class AddTaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.edgesForExtendedLayout = []
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(nextTapped))
 //        titleTextField.rx.text.orEmpty
 //            .subscribe(onNext: { [weak self] in
 //                print("Text: \($0)")
@@ -79,7 +81,8 @@ class AddTaskViewController: UIViewController {
                 .addDisposableTo(self.disposeBag)
             }
             .addDisposableTo(disposeBag)
-        
+
+
         
         
     }
@@ -87,6 +90,10 @@ class AddTaskViewController: UIViewController {
     // MARK: - Actions
     @IBAction func microphoneTapped(_ sender: Any) {
         didTapMicrophone()
+    }
+    
+    func nextTapped() {
+
     }
     
     

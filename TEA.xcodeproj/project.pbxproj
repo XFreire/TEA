@@ -37,10 +37,10 @@
 		AC84419F1E69D7FA00801CD7 /* ScheduleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84419E1E69D7FA00801CD7 /* ScheduleCoordinator.swift */; };
 		AC8441A21E69D86600801CD7 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8441A01E69D86600801CD7 /* ScheduleViewController.swift */; };
 		AC8441A31E69D86600801CD7 /* ScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC8441A11E69D86600801CD7 /* ScheduleViewController.xib */; };
-		AC8441A51E69E29200801CD7 /* AddTaskCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8441A41E69E29200801CD7 /* AddTaskCoordinator.swift */; };
-		ACA1EFCC1E6D69A9007BFC13 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1EFCA1E6D69A9007BFC13 /* AddTaskViewController.swift */; };
-		ACA1EFCD1E6D69A9007BFC13 /* AddTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACA1EFCB1E6D69A9007BFC13 /* AddTaskViewController.xib */; };
-		ACA1EFCF1E6EA642007BFC13 /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1EFCE1E6EA642007BFC13 /* AddTaskViewModel.swift */; };
+		AC8441A51E69E29200801CD7 /* AddPictogramsToTaskCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8441A41E69E29200801CD7 /* AddPictogramsToTaskCoordinator.swift */; };
+		ACA1EFCC1E6D69A9007BFC13 /* AddPictogramsToTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1EFCA1E6D69A9007BFC13 /* AddPictogramsToTaskViewController.swift */; };
+		ACA1EFCD1E6D69A9007BFC13 /* AddPictogramsToTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACA1EFCB1E6D69A9007BFC13 /* AddPictogramsToTaskViewController.xib */; };
+		ACA1EFCF1E6EA642007BFC13 /* AddPictogramsToTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1EFCE1E6EA642007BFC13 /* AddPictogramsToTaskViewModel.swift */; };
 		ACA1EFD31E6EB142007BFC13 /* PictogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1EFD21E6EB142007BFC13 /* PictogramView.swift */; };
 		ACA1EFD51E6EB248007BFC13 /* PictogramView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACA1EFD41E6EB248007BFC13 /* PictogramView.xib */; };
 		ACA1EFD81E6EB561007BFC13 /* PictogramCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1EFD61E6EB561007BFC13 /* PictogramCell.swift */; };
@@ -168,10 +168,10 @@
 		AC84419E1E69D7FA00801CD7 /* ScheduleCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCoordinator.swift; sourceTree = "<group>"; };
 		AC8441A01E69D86600801CD7 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		AC8441A11E69D86600801CD7 /* ScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleViewController.xib; sourceTree = "<group>"; };
-		AC8441A41E69E29200801CD7 /* AddTaskCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskCoordinator.swift; sourceTree = "<group>"; };
-		ACA1EFCA1E6D69A9007BFC13 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
-		ACA1EFCB1E6D69A9007BFC13 /* AddTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTaskViewController.xib; sourceTree = "<group>"; };
-		ACA1EFCE1E6EA642007BFC13 /* AddTaskViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
+		AC8441A41E69E29200801CD7 /* AddPictogramsToTaskCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPictogramsToTaskCoordinator.swift; sourceTree = "<group>"; };
+		ACA1EFCA1E6D69A9007BFC13 /* AddPictogramsToTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPictogramsToTaskViewController.swift; sourceTree = "<group>"; };
+		ACA1EFCB1E6D69A9007BFC13 /* AddPictogramsToTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPictogramsToTaskViewController.xib; sourceTree = "<group>"; };
+		ACA1EFCE1E6EA642007BFC13 /* AddPictogramsToTaskViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPictogramsToTaskViewModel.swift; sourceTree = "<group>"; };
 		ACA1EFD21E6EB142007BFC13 /* PictogramView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictogramView.swift; sourceTree = "<group>"; };
 		ACA1EFD41E6EB248007BFC13 /* PictogramView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PictogramView.xib; sourceTree = "<group>"; };
 		ACA1EFD61E6EB561007BFC13 /* PictogramCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictogramCell.swift; sourceTree = "<group>"; };
@@ -399,10 +399,7 @@
 		AC8441A61E69E29600801CD7 /* AddTask */ = {
 			isa = PBXGroup;
 			children = (
-				AC8441A41E69E29200801CD7 /* AddTaskCoordinator.swift */,
-				ACA1EFCE1E6EA642007BFC13 /* AddTaskViewModel.swift */,
-				ACA1EFCA1E6D69A9007BFC13 /* AddTaskViewController.swift */,
-				ACA1EFCB1E6D69A9007BFC13 /* AddTaskViewController.xib */,
+				ACA1EFE21E714FBA007BFC13 /* AddPictogramsToTask */,
 				ACA1EFDF1E6EF3BC007BFC13 /* Client+API+Pictogram.swift */,
 			);
 			name = AddTask;
@@ -427,6 +424,17 @@
 				ACA1EFD71E6EB561007BFC13 /* PictogramCell.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		ACA1EFE21E714FBA007BFC13 /* AddPictogramsToTask */ = {
+			isa = PBXGroup;
+			children = (
+				AC8441A41E69E29200801CD7 /* AddPictogramsToTaskCoordinator.swift */,
+				ACA1EFCE1E6EA642007BFC13 /* AddPictogramsToTaskViewModel.swift */,
+				ACA1EFCA1E6D69A9007BFC13 /* AddPictogramsToTaskViewController.swift */,
+				ACA1EFCB1E6D69A9007BFC13 /* AddPictogramsToTaskViewController.xib */,
+			);
+			name = AddPictogramsToTask;
 			sourceTree = "<group>";
 		};
 		ACB493B01E60661D00EF069E = {
@@ -756,7 +764,7 @@
 				ACA1EFD51E6EB248007BFC13 /* PictogramView.xib in Resources */,
 				ACA1EFDC1E6ED5CC007BFC13 /* camera.png in Resources */,
 				AC8441A31E69D86600801CD7 /* ScheduleViewController.xib in Resources */,
-				ACA1EFCD1E6D69A9007BFC13 /* AddTaskViewController.xib in Resources */,
+				ACA1EFCD1E6D69A9007BFC13 /* AddPictogramsToTaskViewController.xib in Resources */,
 				ACB493C71E60661D00EF069E /* LaunchScreen.storyboard in Resources */,
 				ACA1EFD91E6EB561007BFC13 /* PictogramCell.xib in Resources */,
 				ACB493C41E60661D00EF069E /* Assets.xcassets in Resources */,
@@ -986,13 +994,13 @@
 			files = (
 				AC8441951E69D6E100801CD7 /* Coordinator.swift in Sources */,
 				ACA1EFD31E6EB142007BFC13 /* PictogramView.swift in Sources */,
-				ACA1EFCC1E6D69A9007BFC13 /* AddTaskViewController.swift in Sources */,
-				ACA1EFCF1E6EA642007BFC13 /* AddTaskViewModel.swift in Sources */,
+				ACA1EFCC1E6D69A9007BFC13 /* AddPictogramsToTaskViewController.swift in Sources */,
+				ACA1EFCF1E6EA642007BFC13 /* AddPictogramsToTaskViewModel.swift in Sources */,
 				AC8441991E69D6E100801CD7 /* UISearchBar+Additions.swift in Sources */,
 				AC8441961E69D6E100801CD7 /* NibLoadableView.swift in Sources */,
 				AC8441971E69D6E100801CD7 /* ReusableView.swift in Sources */,
 				AC84419F1E69D7FA00801CD7 /* ScheduleCoordinator.swift in Sources */,
-				AC8441A51E69E29200801CD7 /* AddTaskCoordinator.swift in Sources */,
+				AC8441A51E69E29200801CD7 /* AddPictogramsToTaskCoordinator.swift in Sources */,
 				ACB493BD1E60661D00EF069E /* AppDelegate.swift in Sources */,
 				ACA1EFE11E6EF751007BFC13 /* Client+API+Pictogram.swift in Sources */,
 				AC84419C1E69D70500801CD7 /* AppCoordinator.swift in Sources */,

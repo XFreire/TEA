@@ -24,7 +24,7 @@ final class ScheduleCoordinator: Coordinator {
         
         viewController.didSelectAddTask = { [weak self] _ in
             print("did select add task")
-            let coordinator = AddTaskCoordinator(navigationController: navigationController)
+            let coordinator = AddPictogramsToTaskCoordinator(navigationController: navigationController)
             self?.add(child: coordinator)
             coordinator.start()
         }

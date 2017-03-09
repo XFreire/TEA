@@ -36,4 +36,5 @@ extension Client {
     public func searchPictogram(forQuery query: String) -> Observable<Pictogram>{
         return object(forResource: API.pictograms(query: query))
     }
+   
 }

@@ -10,7 +10,7 @@ import Foundation
 import Container
 
 /// Coordinates the presentation of a task form
-final class AddTaskCoordinator: Coordinator {
+final class AddPictogramsToTaskCoordinator: Coordinator {
 
     private unowned let navigationController: UINavigationController
 
@@ -19,7 +19,7 @@ final class AddTaskCoordinator: Coordinator {
     }
     
     override func start() {
-        let viewController = AddTaskViewController()
+        let viewController = AddPictogramsToTaskViewController()
         
         viewController.didFinish = { [weak self] in
             guard let `self` = self else {
