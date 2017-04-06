@@ -24,7 +24,7 @@ public struct Pictogram {
     public var task: Task?
     
     // MARK: - Initialization
-    public init(identifier: String, name: String, audioUrl: URL? = nil, imageUrl: URL? = nil, wordType: Int? = nil, audio: Audio? = nil, image: Image? = nil, task: Task? = nil){
+    public init(identifier: String = UUID().uuidString, name: String, audioUrl: URL? = nil, imageUrl: URL? = nil, wordType: Int? = nil, audio: Audio? = nil, image: Image? = nil, task: Task? = nil){
         
         self.identifier = identifier
         self.name = name
@@ -46,7 +46,7 @@ extension Pictogram: Persistable {
         imageUrl = managedObject.imageUrl.flatMap{ URL(string: $0) }
         audio = managedObject.audio.flatMap(Audio.init(managedObject:))
         image = managedObject.image.flatMap(Image.init(managedObject:))
-        task = managedObject.task.flatMap(Task.init(managedObject:))
+        //task = managedObject.task.flatMap(Task.init(managedObject:))
     }
     
     public func managedObject(context: NSManagedObjectContext) -> PictogramEntry {

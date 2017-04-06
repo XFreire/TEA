@@ -8,31 +8,42 @@
 
 import Foundation
 import CoreData
+public protocol TaskResultsType: class {
+    
+    /// Called when tasks are inserted, updated, or removed
+    var didUpdate: () -> Void {get set }
+    
+    /// The number of tasks in tge result set
+    var numberOfTasks: Int {get}
+    
+    /// Returns the task at a given index
+    func task(at index: Int) -> Task
+    
+    func all() -> [Task]
+    
+}
 
-internal final class TaskResults: NSObject, ModelResultsType {
-
-    typealias Model = Task
+public final class TaskResults: NSObject, TaskResultsType {
 
     // MARK: - ModelResultsType
-    var didUpdate: () -> Void = {}
+    public var didUpdate: () -> Void = {}
     
-    var numberOfModels: Int {
+    public var numberOfTasks: Int {
         return resultsController.fetchedObjects?.count ?? 0
         
     }
     
-    var numberOfTask: Int {
-        return numberOfModels
-    }
-    
-    func model(at index: Int) -> Model {
+    public func task(at index: Int) -> Task {
         let indexPath = IndexPath(indexes: [0, index])
         let entry = resultsController.object(at: indexPath)
-        return Model(managedObject: entry)
+        return Task(managedObject: entry)
     }
     
-    func task(at index: Int) -> Model {
-        return model(at: index)
+    public func all() -> [Task] {
+        let entries = resultsController.fetchedObjects
+        let maybeTasks = entries?.flatMap{ Task(managedObject: $0) }
+        guard let tasks = maybeTasks else { return [] }
+        return tasks
     }
     
     // MARK: - Properties
@@ -50,7 +61,7 @@ internal final class TaskResults: NSObject, ModelResultsType {
 }
 
 extension TaskResults: NSFetchedResultsControllerDelegate {
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    public func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         didUpdate()
     }
 }

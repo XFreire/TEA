@@ -14,11 +14,27 @@ public final class TaskEntry: NSManagedObject {
     // MARK: - Properties
     @NSManaged public var identifier: String
     @NSManaged public var name: String
-    @NSManaged var daysOfWeek: [NSNumber]
+    @NSManaged var daysOfWeek: String
+    @NSManaged var imageIndex: NSNumber
     
     // MARK: - Relationships
     @NSManaged public var pictograms: NSSet
 
+}
+extension TaskEntry {
+    
+    @objc(addPictogramsObject:)
+    @NSManaged public func addToPictograms(_ value: PictogramEntry)
+    
+    @objc(removePictogramsObject:)
+    @NSManaged public func removeFromPictograms(_ value: PictogramEntry)
+    
+    @objc(addPictograms:)
+    @NSManaged public func addToPictograms(_ values: NSSet)
+    
+    @objc(removePictograms:)
+    @NSManaged public func removeFromPictograms(_ values: NSSet)
+    
 }
 
 extension TaskEntry: Fetchable {
@@ -27,6 +43,15 @@ extension TaskEntry: Fetchable {
         let fetchRequest = NSFetchRequest<TaskEntry>(entityName: "TaskEntry")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "identifier", ascending: true)]
         
+        return fetchRequest
+    }
+    
+    public static func fetchRequest(forTasksForDay day: DaysOfWeek) -> NSFetchRequest<TaskEntry>{
+        let fetchRequest = NSFetchRequest<TaskEntry>(entityName: "TaskEntry")
+        
+        fetchRequest.predicate = NSPredicate(format: "daysOfWeek contains[c] %@", String(day.rawValue))
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "identifier", ascending: true)]
+
         return fetchRequest
     }
     

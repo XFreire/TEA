@@ -9,31 +9,43 @@
 import Foundation
 import CoreData
 
-internal final class PictogramResults: NSObject, ModelResultsType {
+public protocol PictogramResultsType: class {
     
-    typealias Model = Pictogram
+    /// Called when models are inserted, updated, or removed
+    var didUpdate: () -> Void {get set }
+    
+    /// The number of models in tge result set
+    var numberOfPictograms: Int {get}
+    
+    /// Returns the volume at a given index
+    func pictogram(at index: Int) -> Pictogram
+    
+    func all() -> [Pictogram]
+    
+}
 
+
+final public class PictogramResults: NSObject, PictogramResultsType {
     
     // MARK: - ModelResultsType
-    var didUpdate: () -> Void = {}
+    public var didUpdate: () -> Void = {}
     
-    var numberOfModels: Int {
+    public var numberOfPictograms: Int {
         return resultsController.fetchedObjects?.count ?? 0
         
     }
-    
-    var numberOfPictograms: Int {
-        return numberOfModels
-    }
-    
-    func model(at index: Int) -> Model {
+
+    public func pictogram(at index: Int) -> Pictogram {
         let indexPath = IndexPath(indexes: [0, index])
         let entry = resultsController.object(at: indexPath)
-        return Model(managedObject: entry)
+        return Pictogram(managedObject: entry)
     }
     
-    func pictogram(at index: Int) -> Model {
-        return model(at: index)
+    public func all() -> [Pictogram] {
+        let maybeEntries = resultsController.fetchedObjects
+        guard let entries = maybeEntries else { return [] }
+        
+        return entries.map{ Pictogram(managedObject: $0) }
     }
     
     // MARK: - Properties
@@ -51,7 +63,7 @@ internal final class PictogramResults: NSObject, ModelResultsType {
 }
 
 extension PictogramResults: NSFetchedResultsControllerDelegate {
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    public func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         didUpdate()
     }
 }

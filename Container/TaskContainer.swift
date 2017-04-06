@@ -10,31 +10,40 @@ import Foundation
 import CoreData
 import RxSwift
 
-final class TaskContainer: ModelContainer, ModelContainerType {
+public protocol TaskContainerType: ModelContainerType {
+    /// Saves an array of persistable models in the container
+    func save(tasks: [Task]) -> Observable<Void>
     
-    func allTasks() -> TaskResults {
-        return all()
-    }
+    /// Deletes the persistable model with a given identifier
+    func delete(taskWithIdentifier: Int ) -> Observable<Void>
     
-    func contains(taskWithIdentifier id: Int) -> Bool{
-        return contains(modelWithIdentifier: id)
-    }
+    /// Determines if the container contains a persistable model with a given identifier
+    func contains(taskWithIdentifier: Int) -> Bool
     
-    func save(tasks: [Task]) -> Observable<Void> {
-        return save(models: tasks)
-    }
+    /// Returns all the persistable models in the container
+    func allTasks() -> TaskResultsType
     
-    func delete(taskWithIdentifier id: Int) -> Observable<Void> {
-        return delete(modelWithIdentifier: id)
-    }
+    /// Returns all the persistable models in the container with a given day of week
+    func allTasks(forDay: DaysOfWeek) -> TaskResultsType
+    
+    
+}
+
+extension ModelContainer: TaskContainerType {
+    
     
     /// Returns all the task in the container
-    func all<T : ModelResultsType>() -> T {
-        return TaskResults(fetchRequest: TaskEntry.defaultFetchRequest(), context: container.viewContext) as! T
+    public func allTasks() -> TaskResultsType {
+        return TaskResults(fetchRequest: TaskEntry.defaultFetchRequest(), context: container.viewContext)
+    }
+    
+    /// Returns all the persistable models in the container with a given day of week
+    public func allTasks(forDay day: DaysOfWeek) -> TaskResultsType {
+        return TaskResults(fetchRequest: TaskEntry.fetchRequest(forTasksForDay: day), context: container.viewContext)
     }
     
     /// Determines if the container contains a task with a given identifier
-    public func contains(modelWithIdentifier identifier: Int) -> Bool {
+    public func contains(taskWithIdentifier identifier: Int) -> Bool {
         let fetchRequest = TaskEntry.fetchRequest(forModelWithIdentifier: identifier)
         
         let count = (try? container.viewContext.count(for: fetchRequest)) ?? 0
@@ -43,17 +52,17 @@ final class TaskContainer: ModelContainer, ModelContainerType {
     }
     
     /// Saves an array of tasks in the container
-    func save<T : Persistable>(models: [T]) -> Observable<Void> {
+    public func save(tasks: [Task]) -> Observable<Void> {
         return performBackgroundTask { context in
             
-            let _ = models.map { $0.managedObject(context: context as! T.Context) }
+            _ = tasks.map{ $0.managedObject(context: context) }
             try context.save()
         }
         
     }
     
     /// Deletes the task with a given identifier
-    public func delete(modelWithIdentifier identifier: Int) -> Observable<Void> {
+    public func delete(taskWithIdentifier identifier: Int) -> Observable<Void> {
         return performBackgroundTask { context in
             let fetchRequest = TaskEntry.fetchRequest(forModelWithIdentifier: identifier)
             let entries = try context.fetch(fetchRequest)
@@ -62,24 +71,6 @@ final class TaskContainer: ModelContainer, ModelContainerType {
                 context.delete(entries[0])
                 try context.save()
             }
-        }
-    }
-    
-    /// Loads the correspongind store for the container
-    public func load() -> Observable<Void> {
-        return Observable.create { observer in
-            self.container.loadPersistentStores(completionHandler: { _, error in
-                if let error = error {
-                    observer.onError(error)
-                }
-                else{
-                    observer.onNext()
-                    observer.onCompleted()
-                }
-            })
-            
-            return Disposables.create()
-            
         }
     }
 }

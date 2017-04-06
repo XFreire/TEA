@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-public protocol ModelResultsType {
+public protocol ModelResultsType: class {
     
     associatedtype Model: Persistable
 
@@ -18,10 +18,10 @@ public protocol ModelResultsType {
     var didUpdate: () -> Void {get set }
     
     /// The number of models in tge result set
-    var numberOfModels: Int {get}
+    var numberOfItems: Int {get}
     
     /// Returns the volume at a given index
-    func model(at index: Int) -> Model
+    func item(at index: Int) -> Model
     
 }
 

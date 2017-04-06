@@ -1,36 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="AudioEntry" representedClassName=".AudioEntry" syncable="YES">
         <attribute name="audioData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
-        <attribute name="audioURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="audioUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="identifier" attributeType="String" syncable="YES"/>
         <relationship name="pictogram" maxCount="1" deletionRule="Nullify" destinationEntity="PictogramEntry" inverseName="audio" inverseEntity="PictogramEntry" syncable="YES"/>
     </entity>
     <entity name="ImageEntry" representedClassName=".ImageEntry" syncable="YES">
         <attribute name="identifier" attributeType="String" syncable="YES"/>
         <attribute name="imageData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
-        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="pictogram" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PictogramEntry" inverseName="image" inverseEntity="PictogramEntry" syncable="YES"/>
     </entity>
     <entity name="PictogramEntry" representedClassName=".PictogramEntry" syncable="YES">
+        <attribute name="audioUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="identifier" attributeType="String" indexed="YES" syncable="YES"/>
-        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="photoURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="wordType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" indexed="YES" syncable="YES"/>
         <relationship name="audio" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="AudioEntry" inverseName="pictogram" inverseEntity="AudioEntry" syncable="YES"/>
         <relationship name="image" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ImageEntry" inverseName="pictogram" inverseEntity="ImageEntry" syncable="YES"/>
         <relationship name="task" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TaskEntry" inverseName="pictograms" inverseEntity="TaskEntry" syncable="YES"/>
     </entity>
     <entity name="TaskEntry" representedClassName=".TaskEntry" syncable="YES">
-        <attribute name="daysOfWeek" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="daysOfWeek" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="identifier" attributeType="String" syncable="YES"/>
+        <attribute name="imageIndex" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="pictograms" toMany="YES" deletionRule="Cascade" destinationEntity="PictogramEntry" inverseName="task" inverseEntity="PictogramEntry" syncable="YES"/>
     </entity>
     <elements>
         <element name="AudioEntry" positionX="-54" positionY="18" width="128" height="105"/>
         <element name="ImageEntry" positionX="-36" positionY="36" width="128" height="105"/>
-        <element name="PictogramEntry" positionX="-63" positionY="-18" width="128" height="150"/>
-        <element name="TaskEntry" positionX="-18" positionY="54" width="128" height="105"/>
+        <element name="PictogramEntry" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="TaskEntry" positionX="-18" positionY="54" width="128" height="120"/>
     </elements>
 </model>

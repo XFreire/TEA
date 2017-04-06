@@ -10,31 +10,30 @@ import Foundation
 import CoreData
 import RxSwift
 
-final class PictogramContainer: ModelContainer, ModelContainerType {
+public protocol PictogramContainerType: ModelContainerType {
+    /// Saves an array of persistable models in the container
+    func save(pictograms: [Pictogram]) -> Observable<Void>
     
-    func allPictograms() -> PictogramResults {
-        return all()
-    }
+    /// Deletes the persistable model with a given identifier
+    func delete(pictogramWithIdentifier: Int ) -> Observable<Void>
     
-    func contains(pictogramWithIdentifier id: Int) -> Bool{
-        return contains(modelWithIdentifier: id)
-    }
+    /// Determines if the container contains a persistable model with a given identifier
+    func contains(pictogramWithIdentifier: Int) -> Bool
     
-    func save(pictograms: [Pictogram]) -> Observable<Void> {
-        return save(models: pictograms)
-    }
+    /// Returns all the persistable models in the container
+    func allPictograms() -> PictogramResultsType
+}
+
+extension ModelContainer: PictogramContainerType {
     
-    func delete(pictogramWithIdentifier id: Int) -> Observable<Void> {
-        return delete(modelWithIdentifier: id)
-    }
-    
+
     /// Returns all the pictogram in the container
-    func all<T : ModelResultsType>() -> T {
-        return PictogramResults(fetchRequest: PictogramEntry.defaultFetchRequest(), context: container.viewContext) as! T
+    public func allPictograms() -> PictogramResultsType {
+        return PictogramResults(fetchRequest: PictogramEntry.defaultFetchRequest(), context: container.viewContext)
     }
     
     /// Determines if the container contains a pictogram with a given identifier
-    public func contains(modelWithIdentifier identifier: Int) -> Bool {
+    public func contains(pictogramWithIdentifier identifier: Int) -> Bool {
         let fetchRequest = PictogramEntry.fetchRequest(forModelWithIdentifier: identifier)
         
         let count = (try? container.viewContext.count(for: fetchRequest)) ?? 0
@@ -43,17 +42,17 @@ final class PictogramContainer: ModelContainer, ModelContainerType {
     }
     
     /// Saves an array of pictograms in the container
-    func save<T : Persistable>(models: [T]) -> Observable<Void> {
+    public func save(pictograms: [Pictogram]) -> Observable<Void> {
         return performBackgroundTask { context in
             
-            let _ = models.map { $0.managedObject(context: context as! T.Context) }
+            let _ = pictograms.map { $0.managedObject(context: context) }
             try context.save()
         }
 
     }
     
     /// Deletes the pictogram with a given identifier
-    public func delete(modelWithIdentifier identifier: Int) -> Observable<Void> {
+    public func delete(pictogramWithIdentifier identifier: Int) -> Observable<Void> {
         return performBackgroundTask { context in
             let fetchRequest = PictogramEntry.fetchRequest(forModelWithIdentifier: identifier)
             let entries = try context.fetch(fetchRequest)
@@ -65,21 +64,4 @@ final class PictogramContainer: ModelContainer, ModelContainerType {
         }
     }
     
-    /// Loads the correspongind store for the container
-    public func load() -> Observable<Void> {
-        return Observable.create { observer in
-            self.container.loadPersistentStores(completionHandler: { _, error in
-                if let error = error {
-                    observer.onError(error)
-                }
-                else{
-                    observer.onNext()
-                    observer.onCompleted()
-                }
-            })
-            
-            return Disposables.create()
-            
-        }
-    }
 }
