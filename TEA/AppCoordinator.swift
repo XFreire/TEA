@@ -15,25 +15,32 @@ final class AppCoordinator: Coordinator {
     // MARK: - Properties
     
     private let window: UIWindow
-    private let navigationController = UINavigationController()
+    private let scheduleNavigationController = UINavigationController()
+    private let activitiesNavigationController = UINavigationController()
+    private let tabBarController = UITabBarController()
     private let disposeBag = DisposeBag()
+    private let container = ModelContainer.instance
+
     // MARK: - Initialization
     
     init(window: UIWindow) {
         self.window = window
-        
+        tabBarController.viewControllers = [scheduleNavigationController, activitiesNavigationController]
+        window.rootViewController = tabBarController
     }
     
     override func start() {
+        let _ = container.load().subscribe()
+
         customizeAppearance()
         
-        window.rootViewController = navigationController
+        let activitiesCoordinator = AddPictogramsCoordinator(navigationController: activitiesNavigationController)
+        let scheduleCoordinator = ScheduleCoordinator(navigationController: scheduleNavigationController)
         
-        // The volume list is the initial screen
-        let coordinator = ScheduleCoordinator(navigationController: navigationController)
-        
-        add(child: coordinator)
-        coordinator.start()
+        add(child: activitiesCoordinator)
+        add(child: scheduleCoordinator)
+        activitiesCoordinator.start()
+        scheduleCoordinator.start()
         
         window.makeKeyAndVisible()
         
@@ -45,12 +52,15 @@ final class AppCoordinator: Coordinator {
     private func customizeAppearance() {
         let navigationBarAppearance = UINavigationBar.appearance()
         let barTintColor = UIColor(named: .bar)
-        navigationBarAppearance.barStyle = .black // This will make the status bar white by default
+        navigationBarAppearance.barStyle = .default 
         navigationBarAppearance.barTintColor = barTintColor
-        navigationBarAppearance.tintColor = UIColor.white
+        navigationBarAppearance.tintColor = UIColor(named: .darkText)
         navigationBarAppearance.titleTextAttributes = [
-            NSForegroundColorAttributeName: UIColor.white
+            NSForegroundColorAttributeName: UIColor(named: .darkText)
         ]
+        
+        let tabBarAppearance = UITabBar.appearance()
+        tabBarAppearance.backgroundColor = barTintColor
     }
     
     func loadDummyData() -> Observable<Void>{
@@ -69,3 +79,4 @@ extension UISplitViewController {
         return .lightContent
     }
 }
+

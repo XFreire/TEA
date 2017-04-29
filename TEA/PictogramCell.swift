@@ -9,10 +9,27 @@
 import UIKit
 
 class PictogramCell: UICollectionViewCell, ReusableView, NibLoadableView {
+    
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                super.isSelected = true
+                self.borderWidth = 1
+                self.borderColor = UIColor.green
+            } else {
+                super.isSelected = false
+                self.borderWidth = 0
+                self.borderColor = UIColor.clear
+            }
+        }
+    }
+    
         
     @IBOutlet weak var pictogramView: PictogramView!
     override func prepareForReuse() {
         super.prepareForReuse()
         pictogramView.url = nil
     }
+    
+    
 }

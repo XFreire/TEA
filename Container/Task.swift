@@ -21,7 +21,7 @@ public struct Task {
     public var daysOfWeek = [Int]()
     public var imageIndex: Int = -1
     public var coverUrl: URL? {
-        return pictograms.first?.imageUrl
+        return pictograms[imageIndex].imageUrl
     }
     
     // MARK: - Relationships
@@ -43,7 +43,7 @@ extension Task: Persistable {
         name = managedObject.name
         daysOfWeek = managedObject.daysOfWeek.components(separatedBy: ",").flatMap{ Int($0) }
         imageIndex = Int(managedObject.imageIndex)
-        pictograms  = managedObject.pictograms.flatMap{ Pictogram(managedObject: $0 as! PictogramEntry) }
+        pictograms  = managedObject.sortedPictograms.flatMap{ Pictogram(managedObject: $0) }
     }
     
     public func managedObject(context: NSManagedObjectContext) -> TaskEntry {

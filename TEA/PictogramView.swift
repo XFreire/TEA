@@ -10,7 +10,7 @@ import UIKit
 import ImageLoader
 import RxSwift
 import RxCocoa
-
+import Container
 
 /// Displays a pictogram image
 class PictogramView: UIView {
@@ -21,6 +21,12 @@ class PictogramView: UIView {
     var url: URL? {
         didSet {
             didSetURL()
+        }
+    }
+    
+    var pictogram: Pictogram? {
+        didSet {
+            didSetPictogram()
         }
     }
     
@@ -40,17 +46,25 @@ class PictogramView: UIView {
         setup()
     }
     
+    init(pictogram: Pictogram) {
+        self.pictogram = pictogram
+        super.init(frame: CGRect.zero)
+        fromNib()
+        setup()
+        didSetPictogram()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        fromNib()
+        setup()
+    }
+        
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         fromNib()
         setup()
         
-    }
-    
-    // MARK: Overrides
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        imageView.frame = bounds
     }
 }
 
@@ -59,8 +73,15 @@ class PictogramView: UIView {
 private extension PictogramView {
     
     func setup() {
-        imageView.contentMode = .scaleAspectFill
+        titleLabel.text = ""
         imageView.clipsToBounds = true
+    }
+    
+    func didSetPictogram() {
+        guard let pictogram = self.pictogram, let data = pictogram.image?.imageData else { return }
+        //self.titleLabel.text = pictogram.name
+        self.imageView.image = UIImage(data: data as Data)
+        self.activityIndicator.stopAnimating()
     }
     
     func didSetURL() {
@@ -99,6 +120,7 @@ private extension PictogramView {
             // Add a fade animation and set the image
             imageView.layer.add(CATransition.fade, forKey: kCATransition)
             imageView.image = image
+            self.pictogram?.image = Image(identifier: UUID().uuidString, imageData: UIImagePNGRepresentation(image) as NSData?, imageUrl: nil)
             self.activityIndicator.stopAnimating()
             }.asObserver()
     }
@@ -123,8 +145,8 @@ extension UIView {
         guard let view = Bundle.main.loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)?[0] as? T else {
             return nil
         }
+        view.frame = bounds
         self.addSubview(view)
-        view.translatesAutoresizingMaskIntoConstraints = false
         
         return view 
     }

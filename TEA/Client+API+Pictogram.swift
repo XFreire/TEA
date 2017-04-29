@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import Container
 import TEAService
-
+import ImageLoader
 extension Pictogram: JSONDecodable {
     public init?(dictionary: JSONDictionary) {
         guard let name = dictionary["name"] as? String,
@@ -25,6 +25,7 @@ extension Pictogram: JSONDecodable {
         self.audio = nil
         self.image = nil
         self.task = nil
+        
     }
 }
 

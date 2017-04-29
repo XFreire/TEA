@@ -11,6 +11,11 @@
 		1F20258D73D7AA90BD45BC0A /* Pods_TEAService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD219052A51E9BFAB3A06619 /* Pods_TEAService.framework */; };
 		618B5F1C313E093A8C2DDC7D /* Pods_HTTPFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7785A144F19F5A518A64F118 /* Pods_HTTPFetcher.framework */; };
 		83F99842BCC42CB3F8071755 /* Pods_TEA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A359515BC8D89DB70255039 /* Pods_TEA.framework */; };
+		AC01D3391E94D0B2008D38BB /* ExtendedNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC01D3381E94D0B2008D38BB /* ExtendedNavBarView.swift */; };
+		AC020E341EAF3F95000783E8 /* AddPictogramsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC020E331EAF3F95000783E8 /* AddPictogramsCoordinator.swift */; };
+		AC020E371EAF3FA5000783E8 /* AddPictogramsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC020E351EAF3FA5000783E8 /* AddPictogramsViewController.swift */; };
+		AC020E381EAF3FA5000783E8 /* AddPictogramsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC020E361EAF3FA5000783E8 /* AddPictogramsViewController.xib */; };
+		AC020E3A1EAF3FB0000783E8 /* AddPictogramsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC020E391EAF3FB0000783E8 /* AddPictogramsViewModel.swift */; };
 		AC0EA2931E6750BE005FA25F /* Container.h in Headers */ = {isa = PBXBuildFile; fileRef = AC0EA2911E6750BE005FA25F /* Container.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC0EA2961E6750BE005FA25F /* Container.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0EA28F1E6750BE005FA25F /* Container.framework */; };
 		AC0EA2971E6750BE005FA25F /* Container.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC0EA28F1E6750BE005FA25F /* Container.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -19,6 +24,11 @@
 		AC0EA2A41E6755D1005FA25F /* AudioEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0EA2A31E6755D1005FA25F /* AudioEntry.swift */; };
 		AC0EA2A81E67567F005FA25F /* ImageEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0EA2A71E67567F005FA25F /* ImageEntry.swift */; };
 		AC0EA2AA1E6756CE005FA25F /* TaskEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0EA2A91E6756CE005FA25F /* TaskEntry.swift */; };
+		AC3CFA151E79935800D87618 /* AddTaskCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3CFA141E79935800D87618 /* AddTaskCoordinator.swift */; };
+		AC3CFA171E79935F00D87618 /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3CFA161E79935F00D87618 /* AddTaskViewModel.swift */; };
+		AC3CFA1A1E79939A00D87618 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3CFA181E79939A00D87618 /* AddTaskViewController.swift */; };
+		AC3CFA1B1E79939A00D87618 /* AddTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC3CFA191E79939A00D87618 /* AddTaskViewController.xib */; };
+		AC6EA3D71E9F7501006852EF /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6EA3D61E9F7501006852EF /* GridView.swift */; };
 		AC84416F1E698BE700801CD7 /* TemporaryPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84416A1E698A8A00801CD7 /* TemporaryPersistentContainer.swift */; };
 		AC8441701E698BEA00801CD7 /* ModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84416C1E698AA200801CD7 /* ModelContainer.swift */; };
 		AC8441721E698CAF00801CD7 /* ModelResultsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8441711E698CAF00801CD7 /* ModelResultsType.swift */; };
@@ -38,6 +48,23 @@
 		AC8441A21E69D86600801CD7 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8441A01E69D86600801CD7 /* ScheduleViewController.swift */; };
 		AC8441A31E69D86600801CD7 /* ScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC8441A11E69D86600801CD7 /* ScheduleViewController.xib */; };
 		AC8441A51E69E29200801CD7 /* AddPictogramsToTaskCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8441A41E69E29200801CD7 /* AddPictogramsToTaskCoordinator.swift */; };
+		AC8E992D1EAE661300C74BBD /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8E992C1EAE661300C74BBD /* Font.swift */; };
+		AC8E99381EAE666700C74BBD /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC8E992E1EAE666700C74BBD /* OpenSans-Bold.ttf */; };
+		AC8E99391EAE666700C74BBD /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC8E992F1EAE666700C74BBD /* OpenSans-BoldItalic.ttf */; };
+		AC8E993A1EAE666700C74BBD /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC8E99301EAE666700C74BBD /* OpenSans-ExtraBold.ttf */; };
+		AC8E993B1EAE666700C74BBD /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC8E99311EAE666700C74BBD /* OpenSans-ExtraBoldItalic.ttf */; };
+		AC8E993C1EAE666700C74BBD /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC8E99321EAE666700C74BBD /* OpenSans-Italic.ttf */; };
+		AC8E993D1EAE666700C74BBD /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC8E99331EAE666700C74BBD /* OpenSans-Light.ttf */; };
+		AC8E993E1EAE666700C74BBD /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC8E99341EAE666700C74BBD /* OpenSans-LightItalic.ttf */; };
+		AC8E993F1EAE666700C74BBD /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC8E99351EAE666700C74BBD /* OpenSans-Regular.ttf */; };
+		AC8E99401EAE666700C74BBD /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC8E99361EAE666700C74BBD /* OpenSans-Semibold.ttf */; };
+		AC8E99411EAE666700C74BBD /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC8E99371EAE666700C74BBD /* OpenSans-SemiboldItalic.ttf */; };
+		AC8E99441EAE6A6200C74BBD /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8E99431EAE6A6200C74BBD /* TextField.swift */; };
+		AC8E99461EAE6AB200C74BBD /* TextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC8E99451EAE6AB200C74BBD /* TextField.xib */; };
+		AC8E99481EAE78D500C74BBD /* UIView+Inspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8E99471EAE78D500C74BBD /* UIView+Inspectable.swift */; };
+		AC9BC3611E93E9E700B0842D /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9BC3601E93E9E700B0842D /* ScheduleViewModel.swift */; };
+		AC9BC3641E93EB3600B0842D /* Container+Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9BC3631E93EB3600B0842D /* Container+Schedule.swift */; };
+		AC9BC3661E9410DC00B0842D /* prueba.png in Resources */ = {isa = PBXBuildFile; fileRef = AC9BC3651E9410DC00B0842D /* prueba.png */; };
 		ACA1EFCC1E6D69A9007BFC13 /* AddPictogramsToTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1EFCA1E6D69A9007BFC13 /* AddPictogramsToTaskViewController.swift */; };
 		ACA1EFCD1E6D69A9007BFC13 /* AddPictogramsToTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACA1EFCB1E6D69A9007BFC13 /* AddPictogramsToTaskViewController.xib */; };
 		ACA1EFCF1E6EA642007BFC13 /* AddPictogramsToTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1EFCE1E6EA642007BFC13 /* AddPictogramsToTaskViewModel.swift */; };
@@ -72,6 +99,12 @@
 		ACB4941A1E60684600EF069E /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB494191E60684600EF069E /* API.swift */; };
 		ACB4941C1E60686100EF069E /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB4941B1E60686100EF069E /* Client.swift */; };
 		ACB4941E1E60687A00EF069E /* Client+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB4941D1E60687A00EF069E /* Client+API.swift */; };
+		ACB525BE1EAD016800E4D183 /* NameWithImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB525BD1EAD016800E4D183 /* NameWithImageViewModel.swift */; };
+		ACB525C01EAD055100E4D183 /* papelera.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB525BF1EAD055100E4D183 /* papelera.png */; };
+		ACBDEF701E9B875B006E072C /* DaySwich.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBDEF6F1E9B875B006E072C /* DaySwich.swift */; };
+		ACBDEF781E9CD910006E072C /* NameWithImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBDEF761E9CD910006E072C /* NameWithImageViewController.swift */; };
+		ACBDEF791E9CD910006E072C /* NameWithImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACBDEF771E9CD910006E072C /* NameWithImageViewController.xib */; };
+		ACBDEF7B1E9CDF60006E072C /* NameWithImageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBDEF7A1E9CDF60006E072C /* NameWithImageCoordinator.swift */; };
 		ACD4526A1E689E6900396FC0 /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD452681E689E0000396FC0 /* Persistable.swift */; };
 		ACD4526B1E689E6E00396FC0 /* Pictogram.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD452601E68997A00396FC0 /* Pictogram.swift */; };
 		ACD4526C1E689E7200396FC0 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD452621E689A2700396FC0 /* Audio.swift */; };
@@ -142,6 +175,11 @@
 		7785A144F19F5A518A64F118 /* Pods_HTTPFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HTTPFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		983ACC85A508FF5C9963DA96 /* Pods_ImageLoader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageLoader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FCEDFBF61A68379B751567E /* Pods_Container.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Container.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC01D3381E94D0B2008D38BB /* ExtendedNavBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendedNavBarView.swift; sourceTree = "<group>"; };
+		AC020E331EAF3F95000783E8 /* AddPictogramsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPictogramsCoordinator.swift; sourceTree = "<group>"; };
+		AC020E351EAF3FA5000783E8 /* AddPictogramsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPictogramsViewController.swift; sourceTree = "<group>"; };
+		AC020E361EAF3FA5000783E8 /* AddPictogramsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPictogramsViewController.xib; sourceTree = "<group>"; };
+		AC020E391EAF3FB0000783E8 /* AddPictogramsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPictogramsViewModel.swift; sourceTree = "<group>"; };
 		AC0EA28F1E6750BE005FA25F /* Container.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Container.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC0EA2911E6750BE005FA25F /* Container.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Container.h; sourceTree = "<group>"; };
 		AC0EA2921E6750BE005FA25F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -150,6 +188,11 @@
 		AC0EA2A31E6755D1005FA25F /* AudioEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEntry.swift; sourceTree = "<group>"; };
 		AC0EA2A71E67567F005FA25F /* ImageEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageEntry.swift; sourceTree = "<group>"; };
 		AC0EA2A91E6756CE005FA25F /* TaskEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskEntry.swift; sourceTree = "<group>"; };
+		AC3CFA141E79935800D87618 /* AddTaskCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskCoordinator.swift; sourceTree = "<group>"; };
+		AC3CFA161E79935F00D87618 /* AddTaskViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
+		AC3CFA181E79939A00D87618 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		AC3CFA191E79939A00D87618 /* AddTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTaskViewController.xib; sourceTree = "<group>"; };
+		AC6EA3D61E9F7501006852EF /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		AC84416A1E698A8A00801CD7 /* TemporaryPersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemporaryPersistentContainer.swift; sourceTree = "<group>"; };
 		AC84416C1E698AA200801CD7 /* ModelContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelContainer.swift; sourceTree = "<group>"; };
 		AC8441711E698CAF00801CD7 /* ModelResultsType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelResultsType.swift; sourceTree = "<group>"; };
@@ -169,6 +212,23 @@
 		AC8441A01E69D86600801CD7 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		AC8441A11E69D86600801CD7 /* ScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleViewController.xib; sourceTree = "<group>"; };
 		AC8441A41E69E29200801CD7 /* AddPictogramsToTaskCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPictogramsToTaskCoordinator.swift; sourceTree = "<group>"; };
+		AC8E992C1EAE661300C74BBD /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		AC8E992E1EAE666700C74BBD /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		AC8E992F1EAE666700C74BBD /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		AC8E99301EAE666700C74BBD /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		AC8E99311EAE666700C74BBD /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		AC8E99321EAE666700C74BBD /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		AC8E99331EAE666700C74BBD /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		AC8E99341EAE666700C74BBD /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		AC8E99351EAE666700C74BBD /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		AC8E99361EAE666700C74BBD /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		AC8E99371EAE666700C74BBD /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		AC8E99431EAE6A6200C74BBD /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		AC8E99451EAE6AB200C74BBD /* TextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextField.xib; sourceTree = "<group>"; };
+		AC8E99471EAE78D500C74BBD /* UIView+Inspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Inspectable.swift"; sourceTree = "<group>"; };
+		AC9BC3601E93E9E700B0842D /* ScheduleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
+		AC9BC3631E93EB3600B0842D /* Container+Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Container+Schedule.swift"; sourceTree = "<group>"; };
+		AC9BC3651E9410DC00B0842D /* prueba.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prueba.png; sourceTree = "<group>"; };
 		ACA1EFCA1E6D69A9007BFC13 /* AddPictogramsToTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPictogramsToTaskViewController.swift; sourceTree = "<group>"; };
 		ACA1EFCB1E6D69A9007BFC13 /* AddPictogramsToTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPictogramsToTaskViewController.xib; sourceTree = "<group>"; };
 		ACA1EFCE1E6EA642007BFC13 /* AddPictogramsToTaskViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPictogramsToTaskViewModel.swift; sourceTree = "<group>"; };
@@ -205,6 +265,12 @@
 		ACB494191E60684600EF069E /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		ACB4941B1E60686100EF069E /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		ACB4941D1E60687A00EF069E /* Client+API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Client+API.swift"; sourceTree = "<group>"; };
+		ACB525BD1EAD016800E4D183 /* NameWithImageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameWithImageViewModel.swift; sourceTree = "<group>"; };
+		ACB525BF1EAD055100E4D183 /* papelera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = papelera.png; sourceTree = "<group>"; };
+		ACBDEF6F1E9B875B006E072C /* DaySwich.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaySwich.swift; sourceTree = "<group>"; };
+		ACBDEF761E9CD910006E072C /* NameWithImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameWithImageViewController.swift; sourceTree = "<group>"; };
+		ACBDEF771E9CD910006E072C /* NameWithImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NameWithImageViewController.xib; sourceTree = "<group>"; };
+		ACBDEF7A1E9CDF60006E072C /* NameWithImageCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameWithImageCoordinator.swift; sourceTree = "<group>"; };
 		ACD452601E68997A00396FC0 /* Pictogram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pictogram.swift; sourceTree = "<group>"; };
 		ACD452621E689A2700396FC0 /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		ACD452641E689ACE00396FC0 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -291,10 +357,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AC020E321EAF3F77000783E8 /* NameWithImagePairs */ = {
+			isa = PBXGroup;
+			children = (
+				ACBDEF7A1E9CDF60006E072C /* NameWithImageCoordinator.swift */,
+				ACBDEF761E9CD910006E072C /* NameWithImageViewController.swift */,
+				ACBDEF771E9CD910006E072C /* NameWithImageViewController.xib */,
+				ACB525BD1EAD016800E4D183 /* NameWithImageViewModel.swift */,
+			);
+			name = NameWithImagePairs;
+			sourceTree = "<group>";
+		};
 		AC0EA2901E6750BE005FA25F /* Container */ = {
 			isa = PBXGroup;
 			children = (
 				AC0EA29E1E675308005FA25F /* Models */,
+				AC8441691E698A6D00801CD7 /* Containers */,
 				AC0EA2911E6750BE005FA25F /* Container.h */,
 				AC0EA2921E6750BE005FA25F /* Info.plist */,
 			);
@@ -308,7 +386,6 @@
 				AC84417C1E69BF5800801CD7 /* Fetchable.swift */,
 				AC0EA2A01E67531A005FA25F /* ValueType */,
 				AC0EA29F1E67530E005FA25F /* Managed */,
-				AC8441691E698A6D00801CD7 /* Containers */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -334,6 +411,17 @@
 				ACD452661E689B0D00396FC0 /* Task.swift */,
 			);
 			name = ValueType;
+			sourceTree = "<group>";
+		};
+		AC3CFA131E79934200D87618 /* AddTask */ = {
+			isa = PBXGroup;
+			children = (
+				AC3CFA141E79935800D87618 /* AddTaskCoordinator.swift */,
+				AC3CFA181E79939A00D87618 /* AddTaskViewController.swift */,
+				AC3CFA191E79939A00D87618 /* AddTaskViewController.xib */,
+				AC3CFA161E79935F00D87618 /* AddTaskViewModel.swift */,
+			);
+			name = AddTask;
 			sourceTree = "<group>";
 		};
 		AC8441691E698A6D00801CD7 /* Containers */ = {
@@ -373,7 +461,9 @@
 		AC84418D1E69D69500801CD7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AC8E99471EAE78D500C74BBD /* UIView+Inspectable.swift */,
 				AC84418E1E69D6D300801CD7 /* Color.swift */,
+				AC8E992C1EAE661300C74BBD /* Font.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -399,6 +489,7 @@
 		AC8441A61E69E29600801CD7 /* AddTask */ = {
 			isa = PBXGroup;
 			children = (
+				AC3CFA131E79934200D87618 /* AddTask */,
 				ACA1EFE21E714FBA007BFC13 /* AddPictogramsToTask */,
 				ACA1EFDF1E6EF3BC007BFC13 /* Client+API+Pictogram.swift */,
 			);
@@ -408,11 +499,31 @@
 		AC8441A71E69E2A000801CD7 /* WeekSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				AC01D3381E94D0B2008D38BB /* ExtendedNavBarView.swift */,
 				AC84419E1E69D7FA00801CD7 /* ScheduleCoordinator.swift */,
 				AC8441A01E69D86600801CD7 /* ScheduleViewController.swift */,
 				AC8441A11E69D86600801CD7 /* ScheduleViewController.xib */,
+				AC9BC3601E93E9E700B0842D /* ScheduleViewModel.swift */,
+				AC9BC3631E93EB3600B0842D /* Container+Schedule.swift */,
 			);
 			name = WeekSchedule;
+			sourceTree = "<group>";
+		};
+		AC8E99421EAE666F00C74BBD /* Open Sans Font */ = {
+			isa = PBXGroup;
+			children = (
+				AC8E992E1EAE666700C74BBD /* OpenSans-Bold.ttf */,
+				AC8E992F1EAE666700C74BBD /* OpenSans-BoldItalic.ttf */,
+				AC8E99301EAE666700C74BBD /* OpenSans-ExtraBold.ttf */,
+				AC8E99311EAE666700C74BBD /* OpenSans-ExtraBoldItalic.ttf */,
+				AC8E99321EAE666700C74BBD /* OpenSans-Italic.ttf */,
+				AC8E99331EAE666700C74BBD /* OpenSans-Light.ttf */,
+				AC8E99341EAE666700C74BBD /* OpenSans-LightItalic.ttf */,
+				AC8E99351EAE666700C74BBD /* OpenSans-Regular.ttf */,
+				AC8E99361EAE666700C74BBD /* OpenSans-Semibold.ttf */,
+				AC8E99371EAE666700C74BBD /* OpenSans-SemiboldItalic.ttf */,
+			);
+			name = "Open Sans Font";
 			sourceTree = "<group>";
 		};
 		ACA1EFD11E6EB121007BFC13 /* Views */ = {
@@ -422,6 +533,10 @@
 				ACA1EFD41E6EB248007BFC13 /* PictogramView.xib */,
 				ACA1EFD61E6EB561007BFC13 /* PictogramCell.swift */,
 				ACA1EFD71E6EB561007BFC13 /* PictogramCell.xib */,
+				ACBDEF6F1E9B875B006E072C /* DaySwich.swift */,
+				AC6EA3D61E9F7501006852EF /* GridView.swift */,
+				AC8E99431EAE6A6200C74BBD /* TextField.swift */,
+				AC8E99451EAE6AB200C74BBD /* TextField.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -430,9 +545,9 @@
 			isa = PBXGroup;
 			children = (
 				AC8441A41E69E29200801CD7 /* AddPictogramsToTaskCoordinator.swift */,
-				ACA1EFCE1E6EA642007BFC13 /* AddPictogramsToTaskViewModel.swift */,
 				ACA1EFCA1E6D69A9007BFC13 /* AddPictogramsToTaskViewController.swift */,
 				ACA1EFCB1E6D69A9007BFC13 /* AddPictogramsToTaskViewController.xib */,
+				ACA1EFCE1E6EA642007BFC13 /* AddPictogramsToTaskViewModel.swift */,
 			);
 			name = AddPictogramsToTask;
 			sourceTree = "<group>";
@@ -463,10 +578,13 @@
 		ACB493BB1E60661D00EF069E /* TEA */ = {
 			isa = PBXGroup;
 			children = (
+				AC8E99421EAE666F00C74BBD /* Open Sans Font */,
 				ACA1EFDB1E6ED5CC007BFC13 /* camera.png */,
+				AC9BC3651E9410DC00B0842D /* prueba.png */,
+				ACB525BF1EAD055100E4D183 /* papelera.png */,
 				AC84419A1E69D6ED00801CD7 /* Bootstrap */,
 				ACA1EFD11E6EB121007BFC13 /* Views */,
-				AC84419D1E69D7ED00801CD7 /* Schedule */,
+				ACBDEF751E9CD8DC006E072C /* Controllers */,
 				AC84418A1E69D63A00801CD7 /* Others */,
 				AC84418D1E69D69500801CD7 /* Resources */,
 				ACB493C31E60661D00EF069E /* Assets.xcassets */,
@@ -541,6 +659,27 @@
 				ACB494031E6067CD00EF069E /* TEAService */,
 			);
 			name = CustomFrameworks;
+			sourceTree = "<group>";
+		};
+		ACBDEF741E9CD8CE006E072C /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				AC020E331EAF3F95000783E8 /* AddPictogramsCoordinator.swift */,
+				AC020E351EAF3FA5000783E8 /* AddPictogramsViewController.swift */,
+				AC020E361EAF3FA5000783E8 /* AddPictogramsViewController.xib */,
+				AC020E391EAF3FB0000783E8 /* AddPictogramsViewModel.swift */,
+				AC020E321EAF3F77000783E8 /* NameWithImagePairs */,
+			);
+			name = Activities;
+			sourceTree = "<group>";
+		};
+		ACBDEF751E9CD8DC006E072C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AC84419D1E69D7ED00801CD7 /* Schedule */,
+				ACBDEF741E9CD8CE006E072C /* Activities */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -762,10 +901,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACA1EFD51E6EB248007BFC13 /* PictogramView.xib in Resources */,
+				ACBDEF791E9CD910006E072C /* NameWithImageViewController.xib in Resources */,
+				AC8E99381EAE666700C74BBD /* OpenSans-Bold.ttf in Resources */,
+				ACB525C01EAD055100E4D183 /* papelera.png in Resources */,
+				AC8E99401EAE666700C74BBD /* OpenSans-Semibold.ttf in Resources */,
+				AC8E993D1EAE666700C74BBD /* OpenSans-Light.ttf in Resources */,
 				ACA1EFDC1E6ED5CC007BFC13 /* camera.png in Resources */,
 				AC8441A31E69D86600801CD7 /* ScheduleViewController.xib in Resources */,
 				ACA1EFCD1E6D69A9007BFC13 /* AddPictogramsToTaskViewController.xib in Resources */,
+				AC8E993E1EAE666700C74BBD /* OpenSans-LightItalic.ttf in Resources */,
+				AC8E99411EAE666700C74BBD /* OpenSans-SemiboldItalic.ttf in Resources */,
+				AC8E993B1EAE666700C74BBD /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				AC8E993F1EAE666700C74BBD /* OpenSans-Regular.ttf in Resources */,
 				ACB493C71E60661D00EF069E /* LaunchScreen.storyboard in Resources */,
+				AC8E993C1EAE666700C74BBD /* OpenSans-Italic.ttf in Resources */,
+				AC8E99391EAE666700C74BBD /* OpenSans-BoldItalic.ttf in Resources */,
+				AC020E381EAF3FA5000783E8 /* AddPictogramsViewController.xib in Resources */,
+				AC8E993A1EAE666700C74BBD /* OpenSans-ExtraBold.ttf in Resources */,
+				AC3CFA1B1E79939A00D87618 /* AddTaskViewController.xib in Resources */,
+				AC9BC3661E9410DC00B0842D /* prueba.png in Resources */,
+				AC8E99461EAE6AB200C74BBD /* TextField.xib in Resources */,
 				ACA1EFD91E6EB561007BFC13 /* PictogramCell.xib in Resources */,
 				ACB493C41E60661D00EF069E /* Assets.xcassets in Resources */,
 			);
@@ -993,20 +1148,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC8441951E69D6E100801CD7 /* Coordinator.swift in Sources */,
+				ACB525BE1EAD016800E4D183 /* NameWithImageViewModel.swift in Sources */,
+				AC3CFA171E79935F00D87618 /* AddTaskViewModel.swift in Sources */,
+				ACBDEF7B1E9CDF60006E072C /* NameWithImageCoordinator.swift in Sources */,
 				ACA1EFD31E6EB142007BFC13 /* PictogramView.swift in Sources */,
+				AC9BC3611E93E9E700B0842D /* ScheduleViewModel.swift in Sources */,
+				AC3CFA1A1E79939A00D87618 /* AddTaskViewController.swift in Sources */,
+				AC8E99481EAE78D500C74BBD /* UIView+Inspectable.swift in Sources */,
 				ACA1EFCC1E6D69A9007BFC13 /* AddPictogramsToTaskViewController.swift in Sources */,
 				ACA1EFCF1E6EA642007BFC13 /* AddPictogramsToTaskViewModel.swift in Sources */,
 				AC8441991E69D6E100801CD7 /* UISearchBar+Additions.swift in Sources */,
 				AC8441961E69D6E100801CD7 /* NibLoadableView.swift in Sources */,
 				AC8441971E69D6E100801CD7 /* ReusableView.swift in Sources */,
+				AC9BC3641E93EB3600B0842D /* Container+Schedule.swift in Sources */,
+				ACBDEF701E9B875B006E072C /* DaySwich.swift in Sources */,
 				AC84419F1E69D7FA00801CD7 /* ScheduleCoordinator.swift in Sources */,
 				AC8441A51E69E29200801CD7 /* AddPictogramsToTaskCoordinator.swift in Sources */,
+				AC8E992D1EAE661300C74BBD /* Font.swift in Sources */,
 				ACB493BD1E60661D00EF069E /* AppDelegate.swift in Sources */,
+				AC6EA3D71E9F7501006852EF /* GridView.swift in Sources */,
 				ACA1EFE11E6EF751007BFC13 /* Client+API+Pictogram.swift in Sources */,
 				AC84419C1E69D70500801CD7 /* AppCoordinator.swift in Sources */,
+				ACBDEF781E9CD910006E072C /* NameWithImageViewController.swift in Sources */,
+				AC020E371EAF3FA5000783E8 /* AddPictogramsViewController.swift in Sources */,
+				AC8E99441EAE6A6200C74BBD /* TextField.swift in Sources */,
 				AC8441981E69D6E100801CD7 /* UICollectionView+Additions.swift in Sources */,
 				ACA1EFD81E6EB561007BFC13 /* PictogramCell.swift in Sources */,
+				AC020E3A1EAF3FB0000783E8 /* AddPictogramsViewModel.swift in Sources */,
 				AC8441A21E69D86600801CD7 /* ScheduleViewController.swift in Sources */,
+				AC01D3391E94D0B2008D38BB /* ExtendedNavBarView.swift in Sources */,
+				AC020E341EAF3F95000783E8 /* AddPictogramsCoordinator.swift in Sources */,
+				AC3CFA151E79935800D87618 /* AddTaskCoordinator.swift in Sources */,
 				AC84418F1E69D6D300801CD7 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

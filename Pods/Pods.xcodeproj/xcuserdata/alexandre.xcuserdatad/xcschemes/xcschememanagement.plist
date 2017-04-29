@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwifterSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -67,7 +72,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D02F8DB8A6251518D90013E6153F4347</key>
+		<key>987298E0275CF6271E01956C7365EF4C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A4E31843635DE20D316272EC56C9926E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

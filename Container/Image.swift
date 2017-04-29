@@ -18,6 +18,18 @@ public struct Image {
     
     // MARK: - Relationships
     //public var pictogram: Pictogram?
+    
+    public init(identifier: String, imageData: NSData?, imageUrl: URL?) {
+        self.identifier = identifier
+        self.imageData = imageData
+        self.imageUrl = imageUrl
+    }
+    
+    public init(image: UIImage) {
+        self.identifier = UUID().uuidString
+        self.imageData = UIImagePNGRepresentation(image) as NSData?
+        self.imageUrl = nil
+    }
 }
 
 extension Image: Persistable {

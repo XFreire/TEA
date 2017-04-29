@@ -13,13 +13,14 @@ import Container
 final class AddPictogramsToTaskCoordinator: Coordinator {
 
     private unowned let navigationController: UINavigationController
-
+    private let viewController: AddPictogramsToTaskViewController
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-    }
-    
-    override func start() {
-        let viewController = AddPictogramsToTaskViewController()
+        
+        viewController = AddPictogramsToTaskViewController()
+        
+        super.init()
         
         viewController.didFinish = { [weak self] in
             guard let `self` = self else {
@@ -29,6 +30,18 @@ final class AddPictogramsToTaskCoordinator: Coordinator {
             // This will remove the coordinator from its parent
             self.didFinish()
         }
+        
+        viewController.didTapNext = { pictograms in
+            let coordinator = AddTaskCoordinator(pictograms: pictograms, navigationController: self.navigationController)
+            self.add(child: coordinator)
+            coordinator.start()
+        }
+        
+    }
+    
+    override func start() {
+        
+        
         
         navigationController.pushViewController(viewController, animated: true)
     }

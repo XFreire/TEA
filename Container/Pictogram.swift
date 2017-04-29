@@ -35,6 +35,17 @@ public struct Pictogram {
         self.image = image
         self.task = task
     }
+    
+    public init(name: String, image: UIImage) {
+        self.identifier = UUID().uuidString
+        self.name = name
+        self.audioUrl = nil
+        self.imageUrl = nil
+        self.wordType = nil
+        self.audio = nil
+        self.image = Image(image: image)
+        self.task = nil
+    }
 }
 
 extension Pictogram: Persistable {

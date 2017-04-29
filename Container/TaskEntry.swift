@@ -19,6 +19,14 @@ public final class TaskEntry: NSManagedObject {
     
     // MARK: - Relationships
     @NSManaged public var pictograms: NSSet
+    
+    
+    var sortedPictograms: [PictogramEntry] {
+        let sortDescriptors = [NSSortDescriptor(key: "identifier", ascending: true)]
+        return pictograms.sortedArray(using: sortDescriptors) as! [PictogramEntry]
+    }
+    
+    
 
 }
 extension TaskEntry {

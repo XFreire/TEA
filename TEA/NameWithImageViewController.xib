@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NameWithImageViewController" customModule="TEA" customModuleProvider="target">
+            <connections>
+                <outlet property="namesGrid" destination="QDM-Wz-AvG" id="hTr-eQ-Ybe"/>
+                <outlet property="pictogramsGrid" destination="WPR-vm-0R9" id="epu-N9-NAl"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QDM-Wz-AvG" userLabel="Grid names" customClass="GridView" customModule="TEA" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="333.5" height="375"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ta3-pa-jmt">
+                            <rect key="frame" x="0.0" y="0.0" width="333.5" height="375"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="6EL-b2-69h">
+                                    <rect key="frame" x="0.0" y="0.0" width="167" height="375"/>
+                                </stackView>
+                                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1to-N2-OQ4">
+                                    <rect key="frame" x="167" y="0.0" width="166.5" height="375"/>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="ta3-pa-jmt" firstAttribute="top" secondItem="QDM-Wz-AvG" secondAttribute="top" id="VAL-U3-gLa"/>
+                        <constraint firstAttribute="bottom" secondItem="ta3-pa-jmt" secondAttribute="bottom" id="b2f-nm-y6S"/>
+                        <constraint firstItem="ta3-pa-jmt" firstAttribute="leading" secondItem="QDM-Wz-AvG" secondAttribute="leading" id="gQ5-9t-OSV"/>
+                        <constraint firstAttribute="trailing" secondItem="ta3-pa-jmt" secondAttribute="trailing" id="huJ-kp-8gM"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="firstColumn" destination="6EL-b2-69h" id="MST-bt-o73"/>
+                        <outlet property="secondColumn" destination="1to-N2-OQ4" id="7AO-rN-Mhs"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPR-vm-0R9" userLabel="Grid Pictos" customClass="GridView" customModule="TEA" customModuleProvider="target">
+                    <rect key="frame" x="333.5" y="0.0" width="333.5" height="375"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="o4t-nZ-UT1">
+                            <rect key="frame" x="0.0" y="0.0" width="334" height="375"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="vFv-n2-fdo">
+                                    <rect key="frame" x="0.0" y="0.0" width="167" height="375"/>
+                                </stackView>
+                                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="a9P-fN-DL3">
+                                    <rect key="frame" x="167" y="0.0" width="167" height="375"/>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="o4t-nZ-UT1" firstAttribute="top" secondItem="WPR-vm-0R9" secondAttribute="top" id="Q96-aq-Prb"/>
+                        <constraint firstItem="o4t-nZ-UT1" firstAttribute="leading" secondItem="WPR-vm-0R9" secondAttribute="leading" id="pT2-RU-RnF"/>
+                        <constraint firstAttribute="trailing" secondItem="o4t-nZ-UT1" secondAttribute="trailing" id="pZB-78-pjB"/>
+                        <constraint firstAttribute="bottom" secondItem="o4t-nZ-UT1" secondAttribute="bottom" id="xZE-bg-CA0"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="firstColumn" destination="vFv-n2-fdo" id="gtP-9W-03z"/>
+                        <outlet property="secondColumn" destination="a9P-fN-DL3" id="9LF-Gw-hOT"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="WPR-vm-0R9" secondAttribute="trailing" id="3tv-QC-XsX"/>
+                <constraint firstAttribute="bottom" secondItem="WPR-vm-0R9" secondAttribute="bottom" id="53O-gL-n11"/>
+                <constraint firstItem="WPR-vm-0R9" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="7yk-5L-rRY"/>
+                <constraint firstItem="QDM-Wz-AvG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8yH-ee-scP"/>
+                <constraint firstItem="QDM-Wz-AvG" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="JIn-Gy-m9O"/>
+                <constraint firstItem="QDM-Wz-AvG" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="OdY-GA-9lz"/>
+                <constraint firstItem="WPR-vm-0R9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Q3a-kt-3Nn"/>
+                <constraint firstItem="QDM-Wz-AvG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ZiF-xT-XiQ"/>
+                <constraint firstItem="WPR-vm-0R9" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="d0B-Sg-aOD"/>
+                <constraint firstAttribute="bottom" secondItem="QDM-Wz-AvG" secondAttribute="bottom" id="zWE-lb-If0"/>
+            </constraints>
+            <point key="canvasLocation" x="22" y="44"/>
+        </view>
+    </objects>
+</document>

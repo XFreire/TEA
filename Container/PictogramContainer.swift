@@ -22,9 +22,21 @@ public protocol PictogramContainerType: ModelContainerType {
     
     /// Returns all the persistable models in the container
     func allPictograms() -> PictogramResultsType
+    
+    func clean() -> Observable<Void>
 }
 
 extension ModelContainer: PictogramContainerType {
+    
+    public func clean() -> Observable<Void> {
+        return performBackgroundTask { context in
+            let fetchRequest = PictogramEntry.defaultFetchRequest()
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
+            try self.container.persistentStoreCoordinator.execute(deleteRequest, with: context)
+
+        }
+    }
+
     
 
     /// Returns all the pictogram in the container

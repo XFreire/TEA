@@ -17,7 +17,7 @@ final class ScheduleCoordinator: Coordinator {
     init(navigationController: UINavigationController) {
         
         self.navigationController = navigationController
-        viewController = ScheduleViewController()
+        viewController = ScheduleViewController(viewModel: ScheduleViewModel())
         
         
         super.init()

@@ -44,7 +44,7 @@ enum ColorName {
   var rgbaValue: UInt32 {
     switch self {
     case .background: return 0xf2f2f3ff
-    case .bar: return 0x2e3134ff
+    case .bar: return 0xffffffff
     case .buttonTint: return 0x257f17ff
     case .darkText: return 0x282828ff
     case .detailBackground: return 0xecedeeff

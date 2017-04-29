@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         coordinator = AppCoordinator(window: window)
         coordinator?.start()
         
+        
 //        let client = Client()
 //        client.searchPictogram(forQuery: "ir").subscribe(onNext: { response in
 //            print(response)
