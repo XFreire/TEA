@@ -22,13 +22,13 @@ final class AddPictogramsViewModel {
     
     lazy var pictograms: Observable<[Pictogram]> = self.query.asObservable()
         .throttle(0.3, scheduler: MainScheduler.instance)
-        .flatMap{
+        .flatMapLatest{
             Observable.from($0.components(separatedBy: " ").filter{ $0 != "" })
         }
         .do(onNext: { _ in
             self.pics.removeAll()
         })
-        .flatMapLatest{
+        .flatMap{
             self.client.searchPictogram(forQuery: $0)
                 .catchError{ _ in return
                     Observable.of(Pictogram(name: "error"))
