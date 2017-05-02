@@ -1,3 +1,3 @@
-Example of activity generator: 
+Example of activity generator in Spanish: 
 
 ![activity generator](activity.gif)
