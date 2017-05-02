@@ -50,13 +50,20 @@ class NameWithImageViewController: UIViewController {
         
         let translation = rec.translation(in: self.view)
         let view = rec.view!
-        originalPosition = view.center
+        if originalPosition == nil {
+            originalPosition = view.center
+        }
         view.center = CGPoint(x: rec.view!.center.x + translation.x, y: rec.view!.center.y + translation.y)
         
         rec.setTranslation(CGPoint.zero, in: self.view)
         if rec.state == .ended {
             for i in 0..<pictogramViews.count {
                 detectCollision(container: pictogramViews[i], view: view)
+            }
+            if originalPosition != nil {
+                UIView.animate(withDuration: 0.5){
+                    view.center = self.originalPosition!
+                }
             }
         }
     }
